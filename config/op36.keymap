@@ -66,6 +66,34 @@
             bindings = <&kp LG(C)>;
             label = "COPY";
         };
+
+        paste: paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(V)>;
+            label = "PASTE";
+        };
+
+        cut: cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(X)>;
+            label = "CUT";
+        };
+
+        redo: redo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LS(Z))>;
+            label = "REDO";
+        };
+
+        undo: undo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(Z)>;
+            label = "UNDO";
+        };
     };
 
     keymap {
@@ -76,7 +104,7 @@
   &kp Q            &kp W        &kp E         &kp R              &kp T                                  &kp Y            &kp U               &kp I         &kp O        &kp P
   &hml LEFT_GUI A  &hml LALT S  &hml LCTRL D  &hml LEFT_SHIFT F  &kp G                                  &kp H            &hmr RIGHT_SHIFT J  &hmr RCTRL K  &hmr LALT L  &hmr RGUI SEMICOLON
   &kp Z            &kp X        &kp C         &kp V              &kp B                                  &kp N            &kp M               &kp COMMA     &kp DOT      &kp SLASH
-                                              &lt 4 ESC          &lt 1 SPACE  &lt 4 TAB    &lt 3 ENTER  &lt 2 BACKSPACE  &lt 3 DELETE
+                                              &lt 4 ESC          &lt 1 TAB  &lt 4 SPACE    &lt 4 ENTER  &lt 2 BACKSPACE  &lt 4 DELETE
             >;
 
             display-name = "Base";
@@ -84,10 +112,10 @@
 
         nav {
             bindings = <
-  &none         &none     &none      &none           &none                     &none         &none     &copy      &none      &none
-  &kp LEFT_GUI  &kp LALT  &kp LCTRL  &kp LEFT_SHIFT  &none                     &kp CAPSLOCK  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT
-  &none         &none     &none      &none           &none                     &kp INSERT    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END
-                                     &trans          &trans  &trans    &trans  &mo 3         &trans
+  &none         &none     &none      &none           &none                        &redo          &paste      &copy      &cut       &undo
+  &kp LEFT_GUI  &kp LALT  &kp LCTRL  &kp LEFT_SHIFT  &none                        &kp LEFT       &kp DOWN    &kp UP     &kp RIGHT  &trans
+  &none         &none     &none      &none           &none                        &kp INSERT     &kp HOME    &kp PG_DN  &kp PG_UP  &kp END
+                                     &trans          &trans  &trans    &kp ENTER  &kp BACKSPACE  &kp DELETE
             >;
 
             display-name = "Navigation";
@@ -115,12 +143,12 @@
             display-name = "Adjust";
         };
 
-        layer_4 {
+        mouse {
             bindings = <
-  &trans  &trans  &trans  &trans  &trans                      &trans    &trans          &trans          &trans        &trans
-  &trans  &trans  &trans  &trans  &trans                      &kp A     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT
-  &trans  &trans  &trans  &trans  &trans                      &trans    &trans          &trans          &trans        &trans
-                          &trans  &trans  &trans    &mkp MB2  &mkp MB1  &mkp MCLK
+  &trans        &trans        &trans     &trans          &trans                      &redo           &paste          &copy         &cut             &undo
+  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans                      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
+  &trans        &trans        &trans     &trans          &trans                      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
+                                         &trans          &trans  &trans    &mkp MB2  &mkp MB1        &mkp MCLK
             >;
         };
     };
