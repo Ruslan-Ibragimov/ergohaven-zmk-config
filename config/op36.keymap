@@ -54,7 +54,7 @@
         };
 
         e {
-            bindings = <&kp LG(RU_CYRILLIC_E)>;
+            bindings = <&kp RU_CYRILLIC_E>;
             key-positions = <18 19>;
         };
     };
@@ -117,10 +117,10 @@
 
         layer_4 {
             bindings = <
-  &trans  &trans  &trans  &trans  &trans                    &trans  &trans          &trans          &trans        &trans
-  &trans  &trans  &trans  &trans  &trans                    &kp A   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT
-  &trans  &trans  &trans  &trans  &trans                    &trans  &trans          &trans          &trans        &trans
-                          &trans  &trans  &trans    &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &trans                      &trans    &trans          &trans          &trans        &trans
+  &trans  &trans  &trans  &trans  &trans                      &kp A     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT
+  &trans  &trans  &trans  &trans  &trans                      &trans    &trans          &trans          &trans        &trans
+                          &trans  &trans  &trans    &mkp MB2  &mkp MB1  &mkp MCLK
             >;
         };
     };
