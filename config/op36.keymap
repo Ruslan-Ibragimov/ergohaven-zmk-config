@@ -160,5 +160,14 @@
                                          &mkp MB3        &mkp MB1  &mkp MB2    &mkp MB2  &mkp MB1  &mkp MB3
             >;
         };
+
+        layer_6 {
+            bindings = <
+  &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp RIGHT_BRACKET                       &trans  &trans           &trans     &trans         &trans
+  &kp SEMI          &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL                               &trans  &kp RIGHT_SHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_GUI
+  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH                           &trans  &trans           &trans     &trans         &trans
+                                                &kp DOT       &kp NUMBER_0       &kp MINUS    &trans  &trans  &trans
+            >;
+        };
     };
 };
