@@ -123,10 +123,10 @@
 
         sym {
             bindings = <
-  &none           &kp LT          &kp EQUAL         &kp GT           &kp GRAVE                    &kp CARET  &kp LBKT         &kp UNDER        &kp RBKT        &none
-  &hml LGUI BSLH  &hml LALT LPAR  &hml LSHFT MINUS  &hml LCTRL RPAR  &kp PLUS                     &kp PRCNT  &hmr RCTRL LBRC  &hmr RSHFT SEMI  &hmr LALT RBRC  &hmr RGUI EXCL
-  &kp HASH        &kp STAR        &kp COLON         &kp FSLH         &none                        &none      &kp PIPE         &kp TILDE        &kp AMPS        &kp DLLR
-                                                    &trans           &mo 3      &trans    &trans  &trans     &trans
+  &kp LEFT_BRACE  &kp AMPERSAND  &kp KP_MULTIPLY  &kp LEFT_PARENTHESIS  &kp RIGHT_BRACE                             &trans  &trans           &trans     &trans         &trans
+  &kp COLON       &kp DOLLAR     &kp PERCENT      &kp CARET             &kp PLUS                                    &trans  &kp RIGHT_SHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RGUI
+  &kp TILDE       &kp EXCL       &kp AT           &kp HASH              &kp PIPE                                    &trans  &trans           &trans     &trans         &trans
+                                                  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDER    &trans  &trans  &trans
             >;
 
             display-name = "Symbols";
