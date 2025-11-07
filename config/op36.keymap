@@ -103,11 +103,22 @@
             bindings = <
   &kp Q            &kp W        &kp E         &kp R              &kp T                                  &kp Y            &kp U               &kp I         &kp O        &kp P
   &hml LEFT_GUI A  &hml LALT S  &hml LCTRL D  &hml LEFT_SHIFT F  &kp G                                  &kp H            &hmr RIGHT_SHIFT J  &hmr RCTRL K  &hmr LALT L  &hmr RGUI SEMICOLON
-  &kp Z            &kp X        &kp C         &kp V              &kp B                                  &kp N            &kp M               &kp COMMA     &kp DOT      &kp SLASH
-                                              &lt 4 ESC          &lt 1 TAB  &lt 4 SPACE    &lt 4 ENTER  &lt 2 BACKSPACE  &lt 4 DELETE
+  &lt 7 Z          &kp X        &kp C         &kp V              &kp B                                  &kp N            &kp M               &kp COMMA     &kp DOT      &lt 7 SLASH
+                                              &lt 1 ESC          &lt 2 TAB  &lt 3 SPACE    &lt 4 ENTER  &lt 5 BACKSPACE  &lt 6 DELETE
             >;
 
             display-name = "Base";
+        };
+
+        media {
+            bindings = <
+  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4                        &trans            &trans      &trans    &trans      &bt BT_CLR
+  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_SHIFT   &trans                              &out OUT_BLE      &trans      &trans    &trans      &trans
+  &kp K_PREV    &kp K_NEXT    &kp C_VOL_DN  &kp C_VOLUME_UP  &kp K_MUTE                          &out OUT_USB      &kp C_PREV  &kp C_PP  &kp C_NEXT  &studio_unlock
+                                            &trans           &trans        &trans    &kp K_STOP  &kp K_PLAY_PAUSE  &kp C_MUTE
+            >;
+
+            display-name = "Adjust";
         };
 
         nav {
@@ -121,6 +132,15 @@
             display-name = "Navigation";
         };
 
+        mouse {
+            bindings = <
+  &trans        &trans        &trans     &trans          &trans                      &redo           &paste          &copy         &cut             &undo
+  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans                      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
+  &trans        &trans        &trans     &trans          &trans                      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
+                                         &trans          &trans  &trans    &mkp MB2  &mkp MB1        &mkp MCLK
+            >;
+        };
+
         sym {
             bindings = <
   &kp LEFT_BRACE  &kp AMPERSAND  &kp KP_MULTIPLY  &kp LEFT_PARENTHESIS  &kp RIGHT_BRACE                             &trans  &trans           &trans     &trans         &trans
@@ -132,36 +152,7 @@
             display-name = "Symbols";
         };
 
-        adj {
-            bindings = <
-  &bootloader  &kp F1        &kp F2         &kp F3         &kp F4                     &bt BT_SEL 0  &bt BT_SEL 1         &bt BT_SEL 2       &bt BT_SEL 3        &bt BT_CLR
-  &kp LGUI     &hml LALT F5  &hml LSHFT F6  &hml LCTRL F7  &kp F8                     &out OUT_BLE  &hmr RCTRL C_VOL_DN  &hmr RSHFT C_MUTE  &hmr LALT C_VOL_UP  &kp RGUI
-  &none        &kp F9        &kp F10        &kp F11        &kp F12                    &out OUT_USB  &kp C_PREV           &kp C_PP           &kp C_NEXT          &studio_unlock
-                                            &trans         &trans   &trans    &trans  &trans        &trans
-            >;
-
-            display-name = "Adjust";
-        };
-
-        mouse {
-            bindings = <
-  &trans        &trans        &trans     &trans          &trans                      &redo           &paste          &copy         &cut             &undo
-  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans                      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
-  &trans        &trans        &trans     &trans          &trans                      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
-                                         &trans          &trans  &trans    &mkp MB2  &mkp MB1        &mkp MCLK
-            >;
-        };
-
-        button {
-            bindings = <
-  &undo         &cut          &copy      &paste          &redo                           &redo     &paste           &copy      &cut           &undo
-  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans                          &trans    &kp RIGHT_SHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp LEFT_GUI
-  &undo         &cut          &copy      &paste          &redo                           &redo     &paste           &copy      &cut           &undo
-                                         &mkp MB3        &mkp MB1  &mkp MB2    &mkp MB2  &mkp MB1  &mkp MB3
-            >;
-        };
-
-        layer_6 {
+        num {
             bindings = <
   &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp RIGHT_BRACKET                       &trans  &trans           &trans     &trans         &trans
   &kp SEMI          &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL                               &trans  &kp RIGHT_SHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_GUI
@@ -176,6 +167,15 @@
   &kp F11  &kp F4  &kp F5  &kp F6  &trans                        &trans  &kp RIGHT_SHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp RIGHT_GUI
   &kp F10  &kp F1  &kp F2  &kp F3  &trans                        &trans  &trans           &trans     &trans         &trans
                            &trans  &kp SPACE  &kp TAB    &trans  &trans  &trans
+            >;
+        };
+
+        button {
+            bindings = <
+  &undo         &cut          &copy      &paste          &redo                           &redo     &paste           &copy      &cut           &undo
+  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans                          &trans    &kp RIGHT_SHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp LEFT_GUI
+  &undo         &cut          &copy      &paste          &redo                           &redo     &paste           &copy      &cut           &undo
+                                         &mkp MB3        &mkp MB1  &mkp MB2    &mkp MB2  &mkp MB1  &mkp MB3
             >;
         };
     };
