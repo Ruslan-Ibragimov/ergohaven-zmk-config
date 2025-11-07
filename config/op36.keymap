@@ -151,5 +151,14 @@
                                          &trans          &trans  &trans    &mkp MB2  &mkp MB1        &mkp MCLK
             >;
         };
+
+        button {
+            bindings = <
+  &undo         &cut          &copy      &paste          &redo                           &redo     &paste           &copy      &cut           &undo
+  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans                          &trans    &kp RIGHT_SHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp LEFT_GUI
+  &undo         &cut          &copy      &paste          &redo                           &redo     &paste           &copy      &cut           &undo
+                                         &mkp MB3        &mkp MB1  &mkp MB2    &mkp MB2  &mkp MB1  &mkp MB3
+            >;
+        };
     };
 };
