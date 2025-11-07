@@ -123,10 +123,10 @@
 
         nav {
             bindings = <
-  &none         &none     &none             &none           &none                        &redo          &paste      &copy      &cut       &undo
-  &kp LEFT_GUI  &kp LALT  &kp LCTRL         &kp LEFT_SHIFT  &none                        &kp LEFT       &kp DOWN    &kp UP     &kp RIGHT  &kp CAPS
-  &none         &none     &kp LG(NUMBER_2)  &kp BACKSPACE   &none                        &kp INSERT     &kp HOME    &kp PG_DN  &kp PG_UP  &kp END
-                                            &trans          &trans  &trans    &kp ENTER  &kp BACKSPACE  &kp DELETE
+  &none         &none     &none                 &none           &none                        &redo          &paste      &copy      &cut       &undo
+  &kp LEFT_GUI  &kp LALT  &kp LCTRL             &kp LEFT_SHIFT  &none                        &kp LEFT       &kp DOWN    &kp UP     &kp RIGHT  &kp CAPS
+  &none         &none     &kp LG(LS(NUMBER_2))  &kp BACKSPACE   &none                        &kp INSERT     &kp HOME    &kp PG_DN  &kp PG_UP  &kp END
+                                                &trans          &trans  &trans    &kp ENTER  &kp BACKSPACE  &kp DELETE
             >;
 
             display-name = "Navigation";
