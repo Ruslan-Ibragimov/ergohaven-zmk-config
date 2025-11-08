@@ -57,16 +57,6 @@
             bindings = <&kp RU_CYRILLIC_E>;
             key-positions = <18 19>;
         };
-
-        rus {
-            bindings = <&rus>;
-            key-positions = <0 4>;
-        };
-
-        colemak {
-            bindings = <&eng>;
-            key-positions = <0 3>;
-        };
     };
 
     macros {
@@ -108,7 +98,7 @@
         rus: rus {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 8>, <&macro_tap_time 10>, <&kp LG(SPACE)>;
+            bindings = <&to 1>, <&macro_tap_time 10>, <&kp LG(SPACE)>;
 
             label = "RUS";
         };
@@ -116,7 +106,7 @@
         eng: eng {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 0>, <&macro_tap_time 10>, <&kp LG(SPACE)>;
+            bindings = <&to 0>, <&macro_tap_time 10>, <&kp LG(SPACE)>;
 
             label = "ENG";
         };
@@ -129,11 +119,21 @@
             bindings = <
   &kp Q            &kp W        &kp F         &kp P              &kp B                                  &kp J            &kp L               &kp U         &kp Y     &kp SQT
   &hml LEFT_GUI A  &hml LALT R  &hml LCTRL S  &hml LEFT_SHIFT T  &kp G                                  &kp M            &hmr RIGHT_SHIFT N  &hmr RCTRL E  &hmr I I  &hmr RGUI O
-  &lt 7 Z          &kp X        &kp C         &kp D              &kp V                                  &kp K            &kp H               &kp COMMA     &kp DOT   &lt 7 SLASH
-                                              &lt 1 ESC          &lt 2 TAB  &lt 3 SPACE    &lt 4 ENTER  &lt 5 BACKSPACE  &lt 6 DELETE
+  &lt 8 Z          &kp X        &kp C         &kp D              &kp V                                  &kp K            &kp H               &kp COMMA     &kp DOT   &lt 8 SLASH
+                                              &lt 2 ESC          &lt 3 TAB  &lt 4 SPACE    &lt 5 ENTER  &lt 6 BACKSPACE  &lt 7 DELETE
             >;
 
             display-name = "Base";
+        };
+
+        rus {
+            display-name = "Base";
+            bindings = <
+  &kp RU_CYRILLIC_SHORT_I       &kp RU_CYRILLIC_TSE         &kp RU_CYRILLIC_U          &kp RU_CYRILLIC_KA             &kp RU_CYRILLIC_IE                              &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE             &kp RU_CYRILLIC_SHA        &kp RU_CYRILLIC_SHCHA          &kp RU_CYRILLIC_ZE
+  &hml LEFT_GUI RU_CYRILLIC_EF  &hml LALT RU_CYRILLIC_YERU  &hml LCTRL RU_CYRILLIC_VE  &hml LEFT_SHIFT RU_CYRILLIC_A  &kp RU_CYRILLIC_PE                              &kp RU_CYRILLIC_ER  &hmr RIGHT_SHIFT RU_CYRILLIC_O  &hmr RCTRL RU_CYRILLIC_EL  &hmr RIGHT_ALT RU_CYRILLIC_DE  &hmr RGUI RU_CYRILLIC_ZHE
+  &lt 8 RU_CYRILLIC_YA          &kp RU_CYRILLIC_CHE         &kp RU_CYRILLIC_ES         &kp RU_CYRILLIC_EM             &kp RU_CYRILLIC_I                               &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN       &kp RU_CYRILLIC_BE         &kp RU_CYRILLIC_YU             &lt 8 RU_DOT
+                                                                                       &lt 2 ESC                      &lt 3 TAB           &lt 4 SPACE    &lt 5 ENTER  &lt 6 BACKSPACE     &lt 7 DELETE
+            >;
         };
 
         media {
@@ -162,7 +162,7 @@
             bindings = <
   &trans        &trans        &trans     &trans          &trans                      &redo           &paste          &copy           &cut             &undo
   &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans                      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT  &trans
-  &trans        &trans        &trans     &trans          &trans                      &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans
+  &trans        &trans        &rus       &eng            &trans                      &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans
                                          &trans          &trans  &trans    &mkp MB2  &mkp MB1        &mkp MCLK
             >;
         };
@@ -202,16 +202,6 @@
   &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans                          &trans    &kp RIGHT_SHIFT  &kp RCTRL  &kp RIGHT_ALT  &kp LEFT_GUI
   &undo         &cut          &copy      &paste          &redo                           &redo     &paste           &copy      &cut           &undo
                                          &mkp MB3        &mkp MB1  &mkp MB2    &mkp MB2  &mkp MB1  &mkp MB3
-            >;
-        };
-
-        rus {
-            display-name = "Base";
-            bindings = <
-  &kp RU_CYRILLIC_SHORT_I       &kp RU_CYRILLIC_TSE         &kp RU_CYRILLIC_U          &kp RU_CYRILLIC_KA             &kp RU_CYRILLIC_IE                              &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE             &kp RU_CYRILLIC_SHA        &kp RU_CYRILLIC_SHCHA          &kp RU_CYRILLIC_ZE
-  &hml LEFT_GUI RU_CYRILLIC_EF  &hml LALT RU_CYRILLIC_YERU  &hml LCTRL RU_CYRILLIC_VE  &hml LEFT_SHIFT RU_CYRILLIC_A  &kp RU_CYRILLIC_PE                              &kp RU_CYRILLIC_ER  &hmr RIGHT_SHIFT RU_CYRILLIC_O  &hmr RCTRL RU_CYRILLIC_EL  &hmr RIGHT_ALT RU_CYRILLIC_DE  &hmr RGUI RU_CYRILLIC_ZHE
-  &lt 7 RU_CYRILLIC_YA          &kp RU_CYRILLIC_CHE         &kp RU_CYRILLIC_ES         &kp RU_CYRILLIC_EM             &kp RU_CYRILLIC_I                               &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN       &kp RU_CYRILLIC_BE         &kp RU_CYRILLIC_YU             &lt 7 RU_DOT
-                                                                                       &lt 1 ESC                      &lt 2 TAB           &lt 3 SPACE    &lt 4 ENTER  &lt 5 BACKSPACE     &lt 6 DELETE
             >;
         };
     };
