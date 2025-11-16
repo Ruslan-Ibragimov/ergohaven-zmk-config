@@ -18,7 +18,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             require-prior-idle-ms = <150>;
-            tapping-term-ms = <280>;
+            tapping-term-ms = <210>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
 
@@ -31,7 +31,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             require-prior-idle-ms = <150>;
-            tapping-term-ms = <280>;
+            tapping-term-ms = <210>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
 
@@ -95,7 +95,7 @@
             label = "UNDO";
         };
 
-        rus: rus {
+        qwerty: rus {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to 1>, <&macro_tap_time 10>, <&kp LG(SPACE)>;
@@ -103,7 +103,7 @@
             label = "RUS";
         };
 
-        eng: eng {
+        colemak: eng {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to 0>, <&macro_tap_time 10>, <&kp LG(SPACE)>;
@@ -162,7 +162,7 @@
             bindings = <
   &none      &none         &none         &none                 &none                             &redo     &paste          &copy           &cut            &undo
   &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_SHIFT        &kp BACKSPACE                     &none     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT
-  &rus       &eng          &none         &kp LS(LG(NUMBER_2))  &none                             &none     &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT
+  &qwerty    &colemak      &none         &kp LS(LG(NUMBER_2))  &none                             &none     &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT
                                          &none                 &none          &none    &mkp MB2  &mkp MB1  &mkp MCLK
             >;
         };
@@ -198,10 +198,10 @@
 
         button {
             bindings = <
-  &undo      &cut          &copy         &paste          &redo                           &redo     &paste           &copy          &cut           &undo
-  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_SHIFT  &none                           &none     &kp RIGHT_SHIFT  &kp RIGHT_GUI  &kp RIGHT_ALT  &kp RCTRL
-  &undo      &cut          &copy         &paste          &redo                           &redo     &paste           &copy          &cut           &undo
-                                         &mkp MB3        &mkp MB1  &mkp MB2    &mkp MB2  &mkp MB1  &mkp MB3
+  &undo      &cut          &copy         &paste          &redo                            &redo     &paste           &copy          &cut           &undo
+  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_SHIFT  &kp ENTER                        &none     &kp RIGHT_SHIFT  &kp RIGHT_GUI  &kp RIGHT_ALT  &kp RCTRL
+  &undo      &cut          &copy         &paste          &redo                            &redo     &paste           &copy          &cut           &undo
+                                         &mkp MB3        &mkp MB1   &mkp MB2    &mkp MB2  &mkp MB1  &mkp MB3
             >;
         };
     };
