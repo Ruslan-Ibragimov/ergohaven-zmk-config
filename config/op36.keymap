@@ -46,22 +46,22 @@
         kha {
             bindings = <&kp LBKT>;
             key-positions = <6 7>;
-            timeout-ms = <100>;
-            require-prior-idle-ms = <50>;
+            timeout-ms = <200>;
+            require-prior-idle-ms = <150>;
         };
 
         hrdsgn {
             bindings = <&kp RBKT>;
             key-positions = <7 8>;
-            timeout-ms = <100>;
-            require-prior-idle-ms = <50>;
+            timeout-ms = <200>;
+            require-prior-idle-ms = <150>;
         };
 
         e {
             bindings = <&kp RU_CYRILLIC_E>;
             key-positions = <18 19>;
-            timeout-ms = <100>;
-            require-prior-idle-ms = <50>;
+            timeout-ms = <200>;
+            require-prior-idle-ms = <150>;
         };
     };
 
@@ -104,14 +104,14 @@
         qwerty: rus {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 1>;
+            bindings = <&to 0>;
             label = "RUS";
         };
 
         colemak: eng {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0>;
+            bindings = <&to 1>;
             label = "ENG";
         };
     };
@@ -119,7 +119,17 @@
     keymap {
         compatible = "zmk,keymap";
 
-        base {
+        qwerty {
+            display-name = "Base";
+            bindings = <
+  &kp Q         &kp W        &kp E            &kp R              &kp T                                  &kp Y            &kp U               &kp I             &kp O             &kp P
+  &hml LCTRL A  &hml LALT S  &hml LEFT_GUI D  &hml LEFT_SHIFT F  &kp G                                  &kp H            &hmr RIGHT_SHIFT J  &hmr RIGHT_GUI K  &hmr RIGHT_ALT L  &hmr RCTRL SEMI
+  &lt 8 Z       &kp X        &kp C            &kp V              &kp B                                  &kp N            &kp M               &kp COMMA         &kp DOT           &lt 8 FSLH
+                                              &lt 2 ESC          &lt 3 TAB  &lt 4 SPACE    &lt 5 ENTER  &lt 6 BACKSPACE  &lt 7 DELETE
+            >;
+        };
+
+        colemak {
             bindings = <
   &kp Q         &kp W        &kp F            &kp P              &kp B                                  &kp J            &kp L               &kp U             &kp Y             &kp SQT
   &hml LCTRL A  &hml LALT R  &hml LEFT_GUI S  &hml LEFT_SHIFT T  &kp G                                  &kp M            &hmr RIGHT_SHIFT N  &hmr RIGHT_GUI E  &hmr RIGHT_ALT I  &hmr LCTRL O
@@ -130,16 +140,6 @@
             display-name = "Base";
         };
 
-        rus {
-            display-name = "Base";
-            bindings = <
-  &kp Q         &kp W        &kp E            &kp R              &kp T                                  &kp Y            &kp U               &kp I             &kp O             &kp P
-  &hml LCTRL A  &hml LALT S  &hml LEFT_GUI D  &hml LEFT_SHIFT F  &kp G                                  &kp H            &hmr RIGHT_SHIFT J  &hmr RIGHT_GUI K  &hmr RIGHT_ALT L  &hmr RCTRL SEMI
-  &lt 8 Z       &kp X        &kp C            &kp V              &kp B                                  &kp N            &kp M               &kp COMMA         &kp DOT           &lt 8 FSLH
-                                              &lt 2 ESC          &lt 3 TAB  &lt 4 SPACE    &lt 5 ENTER  &lt 6 BACKSPACE  &lt 7 DELETE
-            >;
-        };
-
         media {
             bindings = <
   &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2     &bt BT_SEL 3      &bt BT_SEL 4                             &none             &none       &none     &none       &bt BT_CLR
@@ -148,15 +148,15 @@
                                                     &none             &none         &none    &kp C_PLAY_PAUSE  &kp K_PLAY_PAUSE  &kp C_MUTE
             >;
 
-            display-name = "Adjust";
+            display-name = "media";
         };
 
         nav {
             bindings = <
-  &kp LC(NUMBER_1)  &kp LC(NUMBER_2)  &kp LC(NUMBER_3)  &kp LC(N4)      &kp LC(N5)                        &redo          &paste      &copy      &cut    &undo
-  &kp LCTRL         &kp LALT          &kp LEFT_GUI      &kp LEFT_SHIFT  &kp CAPSLOCK                      &none          &kp LEFT    &kp DOWN   &kp UP  &kp RIGHT
-  &none             &none             &none             &none           &none                             &none          &kp LC(C)   &kp LC(L)  &none   &none
-                                                        &none           &none         &none    &kp ENTER  &kp BACKSPACE  &kp DELETE
+  &none      &none     &none         &none           &none                             &redo          &paste      &copy      &cut    &undo
+  &kp LCTRL  &kp LALT  &kp LEFT_GUI  &kp LEFT_SHIFT  &kp CAPSLOCK                      &none          &kp LEFT    &kp DOWN   &kp UP  &kp RIGHT
+  &none      &none     &none         &none           &none                             &none          &kp LC(C)   &kp LC(L)  &none   &none
+                                     &none           &none         &none    &kp ENTER  &kp BACKSPACE  &kp DELETE
             >;
 
             display-name = "Navigation";
