@@ -18,7 +18,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             require-prior-idle-ms = <150>;
-            tapping-term-ms = <210>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
 
@@ -31,7 +31,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             require-prior-idle-ms = <150>;
-            tapping-term-ms = <210>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
 
@@ -46,16 +46,22 @@
         kha {
             bindings = <&kp LBKT>;
             key-positions = <6 7>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <50>;
         };
 
         hrdsgn {
             bindings = <&kp RBKT>;
             key-positions = <7 8>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <50>;
         };
 
         e {
             bindings = <&kp RU_CYRILLIC_E>;
             key-positions = <18 19>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <50>;
         };
     };
 
@@ -98,16 +104,14 @@
         qwerty: rus {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 1>, <&macro_tap_time 10>, <&kp LG(SPACE)>;
-
+            bindings = <&to 1>;
             label = "RUS";
         };
 
         colemak: eng {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0>, <&macro_tap_time 10>, <&kp LG(SPACE)>;
-
+            bindings = <&to 0>;
             label = "ENG";
         };
     };
@@ -160,10 +164,10 @@
 
         mouse {
             bindings = <
-  &none      &none         &none         &none                 &none                             &redo     &paste          &copy           &cut            &undo
-  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI  &kp LEFT_SHIFT        &kp BACKSPACE                     &none     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT
-  &qwerty    &colemak      &none         &kp LS(LG(NUMBER_2))  &none                             &none     &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT
-                                         &none                 &none          &none    &mkp MB2  &mkp MB1  &mkp MCLK
+  &none      &kp LC(N1)    &kp LC(NUMBER_2)  &kp LC(NUMBER_3)      &none                             &redo     &paste          &copy           &cut            &undo
+  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_GUI      &kp LEFT_SHIFT        &kp BACKSPACE                     &none     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT
+  &qwerty    &colemak      &none             &kp LS(LG(NUMBER_2))  &none                             &none     &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT
+                                             &none                 &none          &none    &mkp MB2  &mkp MB1  &mkp MCLK
             >;
         };
 
