@@ -153,9 +153,9 @@
 
         nav {
             bindings = <
-  &none      &none     &none         &none           &none                             &redo              &paste          &copy      &cut    &undo
-  &kp LCTRL  &kp LALT  &kp LEFT_GUI  &kp LEFT_SHIFT  &kp CAPSLOCK                      &none              &kp LEFT        &kp DOWN   &kp UP  &kp RIGHT
-  &none      &none     &none         &none           &none                             &none              &kp LC(C)       &kp LC(L)  &none   &none
+  &none      &none     &none         &none           &none                             &redo              &paste          &copy      &cut       &undo
+  &kp LCTRL  &kp LALT  &kp LEFT_GUI  &kp LEFT_SHIFT  &kp CAPSLOCK                      &kp LEFT           &kp DOWN        &kp UP     &kp RIGHT  &none
+  &none      &none     &none         &none           &none                             &none              &kp LC(C)       &kp LC(L)  &none      &none
                                      &none           &none         &none    &kp ENTER  &kp LG(BACKSPACE)  &kp LG(DELETE)
             >;
 
@@ -164,10 +164,10 @@
 
         mouse {
             bindings = <
-  &kp LG(TAB)  &kp LC(N1)    &kp LC(NUMBER_2)  &kp LC(NUMBER_3)      &kp LG(GRAVE)                     &redo     &paste          &mmv MOVE_UP    &cut             &undo
-  &kp LCTRL    &kp LEFT_ALT  &kp LEFT_GUI      &kp LEFT_SHIFT        &kp BACKSPACE                     &copy     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
-  &qwerty      &colemak      &none             &kp LS(LG(NUMBER_2))  &kp ENTER                         &none     &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN   &msc SCRL_RIGHT
-                                               &none                 &none          &none    &mkp MB2  &mkp MB1  &mkp MCLK
+  &kp LG(TAB)  &kp LC(N1)    &kp LC(NUMBER_2)  &kp LC(NUMBER_3)      &kp LG(GRAVE)                     &redo           &paste          &mmv MOVE_UP    &cut             &undo
+  &kp LCTRL    &kp LEFT_ALT  &kp LEFT_GUI      &kp LEFT_SHIFT        &kp BACKSPACE                     &copy           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
+  &qwerty      &colemak      &none             &kp LS(LG(NUMBER_2))  &kp ENTER                         &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_LEFT   &none
+                                               &none                 &none          &none    &mkp MB2  &mkp MB1        &mkp MCLK
             >;
         };
 
@@ -184,10 +184,10 @@
 
         num {
             bindings = <
-  &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp RIGHT_BRACKET                      &none  &none            &none              &none          &none
-  &kp SEMI          &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL                              &none  &kp LEFT         &kp DOWN_ARROW     &kp UP         &kp RIGHT_ARROW
-  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH                          &none  &kp RIGHT_SHIFT  &kp RIGHT_COMMAND  &kp RIGHT_ALT  &kp RIGHT_CONTROL
-                                                &kp KP_DOT    &kp NUMBER_0       &kp MINUS    &none  &none  &none
+  &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp RIGHT_BRACKET                      &none     &none            &none              &none          &none
+  &kp SEMI          &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL                              &kp LEFT  &kp DOWN         &kp UP             &kp RIGHT      &none
+  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH                          &none     &kp RIGHT_SHIFT  &kp RIGHT_COMMAND  &kp RIGHT_ALT  &kp RIGHT_CONTROL
+                                                &kp KP_DOT    &kp NUMBER_0       &kp MINUS    &none  &none     &none
             >;
         };
 
