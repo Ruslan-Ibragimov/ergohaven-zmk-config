@@ -100,20 +100,6 @@
             bindings = <&kp LG(Z)>;
             label = "UNDO";
         };
-
-        qwerty: rus {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to 0>;
-            label = "RUS";
-        };
-
-        colemak: eng {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to 1>;
-            label = "ENG";
-        };
     };
 
     keymap {
@@ -124,20 +110,9 @@
             bindings = <
   &kp Q         &kp W        &kp E            &kp R              &kp T                                  &kp Y            &kp U               &kp I             &kp O             &kp P
   &hml LCTRL A  &hml LALT S  &hml LEFT_GUI D  &hml LEFT_SHIFT F  &kp G                                  &kp H            &hmr RIGHT_SHIFT J  &hmr RIGHT_GUI K  &hmr RIGHT_ALT L  &hmr RCTRL SEMI
-  &lt 8 Z       &kp X        &kp C            &kp V              &kp B                                  &kp N            &kp M               &kp COMMA         &kp DOT           &lt 8 FSLH
-                                              &lt 2 ESC          &lt 3 TAB  &lt 4 SPACE    &lt 5 ENTER  &lt 6 BACKSPACE  &lt 7 DELETE
+  &lt 7 Z       &kp X        &kp C            &kp V              &kp B                                  &kp N            &kp M               &kp COMMA         &kp DOT           &lt 7 FSLH
+                                              &lt 1 ESC          &lt 2 TAB  &lt 3 SPACE    &lt 4 ENTER  &lt 5 BACKSPACE  &lt 6 DELETE
             >;
-        };
-
-        colemak {
-            bindings = <
-  &kp Q         &kp W        &kp F            &kp P              &kp B                                  &kp J            &kp L               &kp U             &kp Y             &kp SQT
-  &hml LCTRL A  &hml LALT R  &hml LEFT_GUI S  &hml LEFT_SHIFT T  &kp G                                  &kp M            &hmr RIGHT_SHIFT N  &hmr RIGHT_GUI E  &hmr RIGHT_ALT I  &hmr LCTRL O
-  &lt 8 Z       &kp X        &kp C            &kp D              &kp V                                  &kp K            &kp H               &kp COMMA         &kp DOT           &lt 8 SLASH
-                                              &lt 2 ESC          &lt 3 TAB  &lt 4 SPACE    &lt 5 ENTER  &lt 6 BACKSPACE  &lt 7 DELETE
-            >;
-
-            display-name = "Base";
         };
 
         media {
@@ -166,7 +141,7 @@
             bindings = <
   &kp LG(TAB)  &kp LC(N1)    &kp LC(NUMBER_2)  &kp LC(NUMBER_3)      &kp LG(GRAVE)                     &redo           &paste          &mmv MOVE_UP    &cut             &undo
   &kp LCTRL    &kp LEFT_ALT  &kp LEFT_GUI      &kp LEFT_SHIFT        &kp BACKSPACE                     &copy           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
-  &qwerty      &colemak      &none             &kp LS(LG(NUMBER_2))  &kp ENTER                         &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_LEFT   &none
+  &none        &none         &none             &kp LS(LG(NUMBER_2))  &kp ENTER                         &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_LEFT   &none
                                                &none                 &none          &none    &mkp MB2  &mkp MB1        &mkp MCLK
             >;
         };
